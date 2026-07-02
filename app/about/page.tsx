@@ -18,20 +18,20 @@ export default function AboutPage() {
           <h2 className="text-xl font-semibold tracking-widest uppercase mb-6 text-zinc-500">Core Team</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="border border-zinc-900 p-8 hover:border-zinc-700 transition-colors">
-              <h3 className="font-bold tracking-widest uppercase text-lg">Nguyễn Minh Nhân (Ren)</h3>
+              <h3 className="font-bold tracking-widest uppercase text-lg">Nguyễn Minh Nhân </h3>
               <p className="text-sm text-zinc-500 uppercase tracking-widest mt-2">Founder / CEO & Producer</p>
             </div>
             
             <div className="border border-zinc-900 p-8 hover:border-zinc-700 transition-colors">
-              <h3 className="font-bold tracking-widest uppercase text-lg">Trương Ngọc Thảo (Vân Hà)</h3>
-              <p className="text-sm text-zinc-500 uppercase tracking-widest mt-2">Business Operations & Branding</p>
+              <h3 className="font-bold tracking-widest uppercase text-lg">Trương Ngọc Thảo </h3>
+              <p className="text-sm text-zinc-500 uppercase tracking-widest mt-2">Founder </p>
             </div>
 
             <div className="border border-zinc-900 p-8 md:col-span-2 hover:border-zinc-700 transition-colors">
               <h3 className="font-bold tracking-widest uppercase text-lg">In-house Production Team</h3>
-              <p className="text-sm text-zinc-500 uppercase tracking-widest mt-2 mb-4">Lead Animators & Artists</p>
+              <p className="text-sm text-zinc-500 uppercase tracking-widest mt-2 mb-4">Our Talented Artists</p>
               <p className="text-zinc-400 leading-relaxed">
-                Featuring the core talents of Ematos, Katori, alongside our extensive network of dedicated freelance animation specialists.
+                At the heart of Ren Animation Studio is a dynamic blend of our top-performing alumni and a seasoned network of freelance experts. Our unified team of Lead Animators, Background Artists, and Concept Artists ensures every frame meets our high standards of artistic integrity.
               </p>
             </div>
           </div>

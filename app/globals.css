@@ -18,3 +18,10 @@
 .animate-marquee:hover {
   animation-play-state: paused;
 }
+
+/* Chỉ tắt chuột mặc định trên máy tính (có chuột), giữ nguyên trên điện thoại cảm ứng */
+@media (pointer: fine) {
+  body, a, button, [role="button"] {
+    cursor: none !important;
+  }
+}

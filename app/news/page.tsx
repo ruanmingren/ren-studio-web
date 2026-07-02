@@ -1,29 +1,24 @@
 import Image from "next/image";
+import Link from "next/link"; // BẮT BUỘC PHẢI CÓ DÒNG NÀY ĐỂ CHUYỂN TRANG
 
 // ĐÂY LÀ KHO DỮ LIỆU CỦA ÔNG
-// Muốn thêm bài mới, ông chỉ cần copy 1 khối { ... } và sửa chữ/hình là xong!
 const newsList = [
   {
     id: 1,
-    date: "May 2026",
+    date: "05 2026",
     title: "Sơn Hà Xích Quỷ Visual Novel Development",
     excerpt: "Active production continues on our history-themed Visual Novel. We are pushing the boundaries of narrative and art integration to deliver a unique experience.",
-    image: "/sonha.png" // Lấy tên file hình có sẵn trong thư mục public
+    image: "/sonha.png",
+    slug: "sonha", // Đã có sẵn
   },
   {
     id: 2,
-    date: "June 2026",
-    title: "Shanghai Festival & Studio Expansion",
-    excerpt: "Ren Animation Studio extends its international presence with an invitation to the upcoming industry festival in Shanghai, continuing our momentum from previous exhibitions.",
-    image: "/71111.png" 
+    date: "06 2026",
+    title: "Hobby Horizon 2026",
+    excerpt: "Ren Animation Studio proudly participated in the Hobby Horizon 2026 event, showcasing our latest projects and engaging with the global animation community.",
+    image: "/71111.png",
+    slug: "festival", // TUI BÙ THÊM SLUG VÀO ĐÂY
   },
-  {
-    id: 3,
-    date: "January 30, 2026",
-    title: "Project 7.1.111 (TIM) First Look Premiere",
-    excerpt: "We proudly unveiled the 4-minute First Look PV of our original anime project, marking a significant milestone in our studio's creative journey.",
-    image: "/lona.png" // Nếu chưa có hình lona.png, ông đổi thành file khác có trong public nhé
-  }
 ];
 
 export default function NewsPage() {
@@ -34,14 +29,14 @@ export default function NewsPage() {
           News & Updates
         </h1>
 
-        {/* Khu vực tự động dàn layout dựa trên kho dữ liệu */}
         <div className="flex flex-col gap-12">
           {newsList.map((news) => (
-            <article 
+            // Thay <article> thành <Link> và truyền href vào
+            <Link 
               key={news.id} 
+              href={`/news/${news.slug}`} 
               className="flex flex-col md:flex-row gap-6 md:gap-10 items-center group cursor-pointer"
             >
-              {/* Khung chứa Hình Nè */}
               <div className="w-full md:w-2/5 aspect-video bg-zinc-900 relative overflow-hidden border border-zinc-800 group-hover:border-zinc-500 transition-colors">
                 <Image 
                   src={news.image} 
@@ -51,7 +46,6 @@ export default function NewsPage() {
                 />
               </div>
 
-              {/* Khung chứa Chữ */}
               <div className="w-full md:w-3/5 flex flex-col justify-center">
                 <p className="text-xs text-zinc-500 tracking-widest mb-2 uppercase">
                   {news.date}
@@ -63,7 +57,7 @@ export default function NewsPage() {
                   {news.excerpt}
                 </p>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
       </div>
