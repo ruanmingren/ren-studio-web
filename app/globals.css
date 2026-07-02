@@ -1,1 +1,20 @@
 @import "tailwindcss";
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: scroll 20s linear infinite;
+}
+
+/* Đưa chuột vào thì dừng lại cho người ta đọc */
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
