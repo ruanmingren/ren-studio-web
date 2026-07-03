@@ -11,7 +11,7 @@ const projects = [
   { id: 3, title: "DỰ ÁN MANGA BÍ MẬT", category: "ADAPTATION", type: "MANGA | UPCOMING", image: "/manga.png", link: "/works/manga" },
   { id: 4, title: "KRONUS - MV PROJECT", category: "CO-PRODUCTION", type: "ANIME MV | UPCOMING", image: "/kronus.png", link: "/works/kronus" },
   
-  // CHIÊU TRỊ CACHE ĐÂY: Tui chêm thêm "" vào đuôi 3 cái hình bị lỗi để ép trình duyệt phải hiện hình ra!
+  // Tên file đã chuẩn, không dùng ?v=1
   { id: 5, title: "GAWRGURA - SHARK'D", category: "CO-PRODUCTION", type: "ANIME MV", image: "/gawr_gura.png", link: "/works/gawr-gura-1" },
   { id: 6, title: "GAWRGURA - BLUE HORIZON", category: "CO-PRODUCTION", type: "ANIME MV", image: "/gawr_gura2.png", link: "/works/gawr-gura-2" },
   { id: 7, title: "IRONMOUSE - UNLEASHED", category: "CO-PRODUCTION", type: "ANIME MV", image: "/ironmouse.png", link: "/works/ironmouse" }
@@ -57,15 +57,19 @@ const ProjectCard = ({ project, index, setHoveredBg }: ProjectCardProps) => {
         onMouseLeave={() => setIsHovered(false)}
       >
         <div className="relative w-full aspect-video bg-zinc-900 mb-6">
-          <Image
-            src={project.image}
-            alt={project.title}
-            fill
-            // ĐÃ THÊM SIZES: Để Terminal hết báo vàng
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
-            className="object-cover transition-transform duration-700 group-hover:scale-105"
-          />
           
+          {/* LỚP 1: BỌC ẢNH VÀO LỒNG OVERFLOW-HIDDEN ĐỂ CHỐNG TRÀN VIỀN */}
+          <div className="absolute inset-0 overflow-hidden">
+            <Image
+              src={project.image}
+              alt={project.title}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+          </div>
+          
+          {/* LỚP 2: VIỀN SVG */}
           <svg className="absolute inset-0 w-full h-full pointer-events-none z-10">
             <motion.rect
               x="0"
