@@ -18,7 +18,23 @@ const projects = [
 const tabs = ["ALL", "ORIGINAL IP", "CO-PRODUCTION", "ADAPTATION"];
 
 // TÁCH RIÊNG CÁI CARD RA ĐỂ QUẢN LÝ VIỀN VÀ BỘ ĐẾM GIỜ CHO CHUẨN
-const ProjectCard = ({ project, index, setHoveredBg }: any) => {
+
+// 1. Khai báo khung dữ liệu cho Props để TypeScript hết bắt bẻ
+type ProjectCardProps = {
+  project: {
+    id: number;
+    title: string;
+    category: string;
+    type: string;
+    image: string;
+    link: string;
+  };
+  index: number;
+  setHoveredBg: (bg: string | null) => void;
+};
+
+// 2. Thay chữ "any" bằng "ProjectCardProps"
+const ProjectCard = ({ project, index, setHoveredBg }: ProjectCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {

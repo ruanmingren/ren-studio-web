@@ -21,33 +21,33 @@ export default function Header() {
       {/* Cụm 2: Menu ở giữa (Chuẩn MAPPA - Đã fix lỗi lòi 1px viền xanh) */}
       <nav className="flex-1 flex justify-center gap-2 text-sm font-semibold tracking-wide whitespace-nowrap">
         
-        <Link href="/works" className="group relative inline-flex px-4 py-2 overflow-hidden cursor-pointer">
+        <Link href="/works" className="group relative inline-flex px-4 py-0.8 overflow-hidden cursor-pointer">
           {/* Dùng origin-left và scale-x-0 để khung giãn từ trái sang phải mượt mà */}
           <span className="absolute inset-0 bg-[#2563eb] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out" />
           <span className="relative z-10 text-white group-hover:text-black transition-colors duration-300">WORKS</span>
         </Link>
         
-        <Link href="/about" className="group relative inline-flex px-4 py-2 overflow-hidden cursor-pointer">
+        <Link href="/about" className="group relative inline-flex px-4 py-0.8 overflow-hidden cursor-pointer">
           <span className="absolute inset-0 bg-[#2563eb] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out" />
           <span className="relative z-10 text-white group-hover:text-black transition-colors duration-300">ABOUT</span>
         </Link>
         
-        <Link href="/news" className="group relative inline-flex px-4 py-2 overflow-hidden cursor-pointer">
+        <Link href="/news" className="group relative inline-flex px-4 py-0.8 overflow-hidden cursor-pointer">
           <span className="absolute inset-0 bg-[#2563eb] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out" />
           <span className="relative z-10 text-white group-hover:text-black transition-colors duration-300">NEWS</span>
         </Link>
         
-        <Link href="/visuals" className="group relative inline-flex px-4 py-2 overflow-hidden cursor-pointer">
+        <Link href="/visuals" className="group relative inline-flex px-4 py-0.8 overflow-hidden cursor-pointer">
           <span className="absolute inset-0 bg-[#2563eb] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out" />
           <span className="relative z-10 text-white group-hover:text-black transition-colors duration-300">VISUALS</span>
         </Link>
         
-        <Link href="/recruit" className="group relative inline-flex px-4 py-2 overflow-hidden cursor-pointer">
+        <Link href="/recruit" className="group relative inline-flex px-4 py-0.8 overflow-hidden cursor-pointer">
           <span className="absolute inset-0 bg-[#2563eb] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out" />
           <span className="relative z-10 text-white group-hover:text-black transition-colors duration-300">RECRUIT</span>
         </Link>
         
-        <Link href="/store" className="group relative inline-flex px-4 py-2 overflow-hidden cursor-pointer">
+        <Link href="/store" className="group relative inline-flex px-4 py-0.8 overflow-hidden cursor-pointer">
           <span className="absolute inset-0 bg-[#2563eb] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out" />
           <span className="relative z-10 text-white group-hover:text-black transition-colors duration-300">STORE</span>
         </Link>
