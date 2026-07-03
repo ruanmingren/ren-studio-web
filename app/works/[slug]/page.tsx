@@ -16,6 +16,7 @@ type ProjectDetail = {
   staff: { role: string; name: string }[]; // Thêm bảng credit
 };
 
+
 // 2. Data mẫu (Ông cứ điền thêm vào đây)
 const projectsData: Record<string, ProjectDetail> = {
   "71111": {
@@ -144,7 +145,7 @@ const projectsData: Record<string, ProjectDetail> = {
   "ironmouse": {
     title: "IRONMOUSE - UNLEASHED",
     category: "CO-PRODUCTION",
-    heroImage: "/ironmouse.png",
+    heroImage: "/ironmouse_v.png",
     youtubeId: "8G0l7P9XI1U",
     description: "Tham gia vào dây chuyền sản xuất MV Anime cho VTuber hàng đầu Ironmouse. Đảm bảo chất lượng xuất ra chuẩn chỉnh và sắc nét nhất.",
     client: "VShojo",
