@@ -72,9 +72,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-black text-white">
+      <body className={`${inter.className} bg-black text-white relative antialiased`}>
         <TransitionWipe />
         <div className="fixed inset-0 z-[-10] w-screen h-screen bg-[url('/duong-dan-anh-halftone.png')] bg-repeat opacity-20 pointer-events-none" />
+        <OrganizationJsonLd />
         <CustomCursor />
         <StudioHeader />
         <WibuPortal />
