@@ -16,7 +16,7 @@ export default function WibuPage() {
           <p className="text-lg text-zinc-600 leading-relaxed mb-8 max-w-2xl mx-auto">
             Đào tạo chuyên sâu về Digital Art dành cho Anime. Từ thiết kế Concept, Minh họa, Xây dựng kịch bản đến phát triển Animation chuẩn Anime Industry.
           </p>
-          <a href="https://www.facebook.com/Backgroundanimeclass" target="_blank" rel="noopener noreferrer" className="inline-block bg-blue-600 text-white font-bold tracking-widest uppercase px-8 py-4 rounded-full hover:bg-blue-700 transition-colors shadow-lg hover:shadow-blue-500/30">
+          <a href="https://www.facebook.com/animebgclass/" target="_blank" rel="noopener noreferrer" className="inline-block bg-blue-600 text-white font-bold tracking-widest uppercase px-8 py-4 rounded-full hover:bg-blue-700 transition-colors shadow-lg hover:shadow-blue-500/30">
             Đăng Ký Tư Vấn
           </a>
         </div>

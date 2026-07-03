@@ -21,7 +21,7 @@ export default function MarqueeClients() {
         {/* Tiêu đề được canh lề đồng bộ với bố cục tổng của trang */}
         <div className="max-w-7xl mx-auto mb-10 px-6 md:px-12">
           <h2 className="text-xl md:text-2xl text-zinc-400 tracking-[0.4em] uppercase font-semibold">
-            Collaborated With
+            Our Clients
           </h2>
         </div>
         
@@ -48,6 +48,7 @@ export default function MarqueeClients() {
                   alt={client.name}
                   width={300}
                   height={150}
+                  style={{ width: "auto", height: "auto" }} // THÊM DÒNG NÀY VÀO LÀ NEXT.JS VỪA LÒNG
                   className="object-contain max-h-full"
                 />
               </div>

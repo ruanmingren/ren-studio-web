@@ -13,7 +13,8 @@ export default function Header() {
             alt="Ren Animation Studio Logo" 
             width={150} 
             height={50} 
-            className="object-contain invert"
+            priority
+            style={{ width: "auto", height: "auto" }} // THÊM ĐÚNG DÒNG NÀY LÀ SẠCH BÓNG
           />
         </Link>
       </div>
