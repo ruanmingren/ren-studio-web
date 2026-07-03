@@ -15,6 +15,7 @@ export default function Header() {
             height={50} 
             priority
             style={{ width: "auto", height: "auto" }} // THÊM ĐÚNG DÒNG NÀY LÀ SẠCH BÓNG
+            className="invert"
           />
         </Link>
       </div>

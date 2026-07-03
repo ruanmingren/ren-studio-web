@@ -7,6 +7,7 @@ import LanguageSwitcher from "./components/LanguageSwitcher";
 import CustomCursor from "./components/CustomCursor";
 import BGMPlayer from "./components/BGMPlayer";
 import OrganizationJsonLd from "./components/OrganizationJsonLd"; // Nhớ import cái này 
+import TransitionWipe from "./components/TransitionWipe";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -72,6 +73,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-black text-white">
+        <TransitionWipe />
         <div className="fixed inset-0 z-[-10] w-screen h-screen bg-[url('/duong-dan-anh-halftone.png')] bg-repeat opacity-20 pointer-events-none" />
         <CustomCursor />
         <StudioHeader />
