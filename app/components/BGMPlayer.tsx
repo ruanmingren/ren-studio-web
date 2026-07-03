@@ -3,8 +3,8 @@ import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const playlist = [
-  "/bgm-1.mp3", 
-  "/bgm-2.mp3"
+  "/bgm-1.wav", 
+  "/bgm-2.wav"
 ];
 
 export default function BGMPlayer() {
