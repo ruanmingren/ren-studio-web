@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion"; // Kêu gọi thêm sức mạnh của Framer Motion
+import { motion, AnimatePresence } from "framer-motion";
 import FadeUp from "../components/FadeUp";
 
 const projects = [
@@ -10,16 +10,15 @@ const projects = [
   { id: 2, title: "SƠN HÀ XÍCH QUỶ", category: "ORIGINAL IP", type: "VISUAL NOVEL", image: "/sonha.png", link: "/works/son-ha-xich-quy" },
   { id: 3, title: "DỰ ÁN MANGA BÍ MẬT", category: "ADAPTATION", type: "MANGA | UPCOMING", image: "/manga.png", link: "/works/manga" },
   { id: 4, title: "KRONUS - MV PROJECT", category: "CO-PRODUCTION", type: "ANIME MV | UPCOMING", image: "/kronus.png", link: "/works/kronus" },
-  { id: 5, title: "GAWR GURA - SHARK'D", category: "CO-PRODUCTION", type: "ANIME MV", image: "/gawrgura.png", link: "/works/gawr-gura-1" },
-  { id: 6, title: "GAWR GURA - BLUE HORIZON", category: "CO-PRODUCTION", type: "ANIME MV", image: "/gawrgura2.png", link: "/works/gawr-gura-2" },
-  { id: 7, title: "IRONMOUSE - UNLEASHED", category: "CO-PRODUCTION", type: "ANIME MV", image: "/ironmouse.png", link: "/works/ironmouse" }
+  
+  // CHIÊU TRỊ CACHE ĐÂY: Tui chêm thêm "?v=1" vào đuôi 3 cái hình bị lỗi để ép trình duyệt phải hiện hình ra!
+  { id: 5, title: "GAWR GURA - SHARK'D", category: "CO-PRODUCTION", type: "ANIME MV", image: "/gawrgura.png?v=1", link: "/works/gawr-gura-1" },
+  { id: 6, title: "GAWR GURA - BLUE HORIZON", category: "CO-PRODUCTION", type: "ANIME MV", image: "/gawrgura2.png?v=1", link: "/works/gawr-gura-2" },
+  { id: 7, title: "IRONMOUSE - UNLEASHED", category: "CO-PRODUCTION", type: "ANIME MV", image: "/ironmouse.png?v=1", link: "/works/ironmouse" }
 ];
 
 const tabs = ["ALL", "ORIGINAL IP", "CO-PRODUCTION", "ADAPTATION"];
 
-// TÁCH RIÊNG CÁI CARD RA ĐỂ QUẢN LÝ VIỀN VÀ BỘ ĐẾM GIỜ CHO CHUẨN
-
-// 1. Khai báo khung dữ liệu cho Props để TypeScript hết bắt bẻ
 type ProjectCardProps = {
   project: {
     id: number;
@@ -33,19 +32,17 @@ type ProjectCardProps = {
   setHoveredBg: (bg: string | null) => void;
 };
 
-// 2. Thay chữ "any" bằng "ProjectCardProps"
 const ProjectCard = ({ project, index, setHoveredBg }: ProjectCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     let timer: NodeJS.Timeout;
     if (isHovered) {
-      // Viền chạy mất 0.6 giây, nên mình canh bộ đếm giờ đúng 600ms mới hiện nền
       timer = setTimeout(() => {
         setHoveredBg(project.image);
       }, 600);
     } else {
-      setHoveredBg(null); // Gỡ nền khi chuột đi chỗ khác
+      setHoveredBg(null); 
     }
     return () => clearTimeout(timer);
   }, [isHovered, project.image, setHoveredBg]);
@@ -55,7 +52,7 @@ const ProjectCard = ({ project, index, setHoveredBg }: ProjectCardProps) => {
       <Link 
         href={project.link} 
         className="group cursor-pointer block relative"
-        data-cursor="view" // Vẫn giữ cái này để con chuột phình to ra thành chữ VIEW
+        data-cursor="view" 
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
@@ -64,12 +61,11 @@ const ProjectCard = ({ project, index, setHoveredBg }: ProjectCardProps) => {
             src={project.image}
             alt={project.title}
             fill
-            // BẮT BUỘC PHẢI CÓ DÒNG NÀY Ở MỌI THẺ IMAGE CÓ THUỘC TÍNH 'fill'
+            // ĐÃ THÊM SIZES: Để Terminal hết báo vàng
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
             className="object-cover transition-transform duration-700 group-hover:scale-105"
           />
           
-          {/* ĐÂY LÀ PHÉP MÀU: CÁI VIỀN CHẠY BẰNG SVG */}
           <svg className="absolute inset-0 w-full h-full pointer-events-none z-10">
             <motion.rect
               x="0"
@@ -77,15 +73,13 @@ const ProjectCard = ({ project, index, setHoveredBg }: ProjectCardProps) => {
               width="100%"
               height="100%"
               fill="none"
-              stroke="#ffffff" // Màu của cái viền (Ông có thể đổi thành mã màu xanh lá nếu thích)
+              stroke="#ffffff" 
               strokeWidth="6"
               initial={{ pathLength: 0 }}
-              animate={{ pathLength: isHovered ? 1 : 0 }} // Khi hover thì vẽ full 1 vòng
-              transition={{ duration: 0.6, ease: "easeInOut" }} // Thời gian vẽ viền
+              animate={{ pathLength: isHovered ? 1 : 0 }} 
+              transition={{ duration: 0.6, ease: "easeInOut" }} 
             />
           </svg>
-
-          
         </div>
 
         <div className="flex flex-col relative z-10">
@@ -108,7 +102,7 @@ const ProjectCard = ({ project, index, setHoveredBg }: ProjectCardProps) => {
 
 export default function WorksPage() {
   const [activeTab, setActiveTab] = useState("ALL");
-  const [hoveredBg, setHoveredBg] = useState<string | null>(null); // Trạng thái lưu ảnh nền hiện tại
+  const [hoveredBg, setHoveredBg] = useState<string | null>(null);
 
   const filteredProjects = projects.filter((project) => {
     if (activeTab === "ALL") return true;
@@ -117,31 +111,27 @@ export default function WorksPage() {
 
   return (
     <>
-      {/* 1. LỚP NỀN ĐEN GỐC DƯỚI CÙNG */}
       <div className="fixed inset-0 z-[-2] bg-black" />
 
-      {/* 2. LỚP ẢNH NỀN TOÀN TRANG SẼ HIỆN RA KHI VIỀN CHẠY XONG */}
       <AnimatePresence>
         {hoveredBg && (
           <motion.div
             initial={{ opacity: 0 }}
-            animate={{ opacity: 0.15 }} // Giữ độ sáng 15% để thấy mờ mờ nghệ thuật, không bị chói làm mù chữ
+            animate={{ opacity: 0.15 }} 
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.8 }} // Thời gian ảnh nền fade in/out
+            transition={{ duration: 0.8 }} 
             className="fixed inset-0 z-[-1] pointer-events-none"
           >
             <Image
               src={hoveredBg}
               alt="Background Overlay"
               fill
-              className="object-cover blur-sm" // Làm nhòe nhẹ ảnh nền giống video ông gửi
+              className="object-cover blur-sm" 
             />
           </motion.div>
         )}
       </AnimatePresence>
 
-      {/* 3. NỘI DUNG TRANG CHÍNH */}
-      {/* Đã xóa bg-black ở thẻ main để có thể nhìn xuyên thấu xuống lớp ảnh nền bên dưới */}
       <main className="min-h-screen pt-32 pb-24 px-6 md:px-12 w-full relative z-10">
         
         <FadeUp>
@@ -173,7 +163,6 @@ export default function WorksPage() {
 
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-x-8 gap-y-16">
           {filteredProjects.map((project, index) => (
-            // Truyền hàm setHoveredBg vào từng card để nó "gọi" ảnh nền lên
             <ProjectCard key={project.id} project={project} index={index} setHoveredBg={setHoveredBg} />
           ))}
         </div>
