@@ -14,7 +14,7 @@ const projects = [
   // CHIÊU TRỊ CACHE ĐÂY: Tui chêm thêm "" vào đuôi 3 cái hình bị lỗi để ép trình duyệt phải hiện hình ra!
   { id: 5, title: "GAWRGURA - SHARK'D", category: "CO-PRODUCTION", type: "ANIME MV", image: "/gawr_gura.png", link: "/works/gawr-gura-1" },
   { id: 6, title: "GAWRGURA - BLUE HORIZON", category: "CO-PRODUCTION", type: "ANIME MV", image: "/gawr_gura2.png", link: "/works/gawr-gura-2" },
-  { id: 7, title: "IRONMOUSE - UNLEASHED", category: "CO-PRODUCTION", type: "ANIME MV", image: "/iron_mouse.png", link: "/works/ironmouse" }
+  { id: 7, title: "IRONMOUSE - UNLEASHED", category: "CO-PRODUCTION", type: "ANIME MV", image: "/ironmouse.png", link: "/works/ironmouse" }
 ];
 
 const tabs = ["ALL", "ORIGINAL IP", "CO-PRODUCTION", "ADAPTATION"];
