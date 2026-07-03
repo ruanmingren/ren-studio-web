@@ -117,7 +117,7 @@ const projectsData: Record<string, ProjectDetail> = {
   "gawr-gura-1": {
     title: "GAWR GURA - SHARK'D",
     category: "CO-PRODUCTION",
-    heroImage: "/gawrgura.png", // Phải bù thêm hình banner phòng hờ
+    heroImage: "/gawr_gura.png", // Phải bù thêm hình banner phòng hờ
     youtubeId: "kJGsWORSg-4", 
     description: "Góp sức vào dự án MV đình đám của Gawr Gura, hỗ trợ xử lý các khâu hình ảnh để mang lại trải nghiệm thị giác bùng nổ cho cộng đồng fan toàn cầu.",
     client: "Cover Corp (Hololive EN)",
@@ -131,7 +131,7 @@ const projectsData: Record<string, ProjectDetail> = {
   "gawr-gura-2": {
     title: "GAWR GURA - BLUE HORIZON",
     category: "CO-PRODUCTION",
-    heroImage: "/gawrgura2.png",
+    heroImage: "/gawr_gura2.png",
     youtubeId: "W7q8cHY91Ew",
     description: "Tiếp tục đồng hành trong dự án MV thứ 2 của Gawr Gura. Đẩy mạnh chất lượng diễn hoạt và độ chi tiết của môi trường.",
     client: "Cover Corp (Hololive EN)",
