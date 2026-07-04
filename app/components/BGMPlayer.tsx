@@ -3,9 +3,9 @@ import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const playlist = [
-  "/bgm-1.wav", 
-  "/bgm-2.wav"
-];
+    { title: "Ngày Mai - Masaharu", src: "/bgm-1.wav" },
+    { title: "Tìm - HSY", src: "/bgm-2.wav" },
+  ];
 
 export default function BGMPlayer() {
   const audioRef = useRef<HTMLAudioElement>(null);
@@ -61,7 +61,7 @@ export default function BGMPlayer() {
       onClick={() => setIsExpanded(!isExpanded)} 
       animate={{ padding: isExpanded ? "8px 16px 8px 8px" : "8px 8px" }} 
     >
-      <audio ref={audioRef} src={playlist[currentTrack]} onEnded={nextTrack} />
+      <audio ref={audioRef} src={playlist[currentTrack].src} onEnded={nextTrack} />
       
       {/* CỤM 1: Đĩa than xoay */}
       <motion.button 
@@ -91,7 +91,7 @@ export default function BGMPlayer() {
                 Now Playing
               </span>
               <span className="text-xs text-white font-medium w-20 truncate">
-                Track 0{currentTrack + 1}
+                {playlist[currentTrack].title}
               </span>
             </div>
             

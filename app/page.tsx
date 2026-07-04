@@ -22,7 +22,6 @@ export default function HomePage() {
           loop 
           muted 
           playsInline 
-          // THÊM THUỘC TÍNH NÀY (Nhớ quăng 1 file ảnh chụp màn hình video vào thư mục public)
           poster="/poster-showreel.jpg" 
           className="w-full h-full object-cover"
         >
@@ -64,11 +63,9 @@ export default function HomePage() {
         </div>
 
         {/* 4. DẢI LOGO TRÀN VIỀN 100% */}
-        {/* Đảm bảo thẻ div này TRONG SUỐT HOÀN TOÀN, không có bg-black hay border gì hết */}
         <div className="w-full bg-transparent overflow-hidden py-4">
            <MarqueeClients />
         </div>
-        
       </div>
     </main>
   );

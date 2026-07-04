@@ -8,6 +8,7 @@ import CustomCursor from "./components/CustomCursor";
 import BGMPlayer from "./components/BGMPlayer";
 import OrganizationJsonLd from "./components/OrganizationJsonLd"; // Nhớ import cái này 
 import TransitionWipe from "./components/TransitionWipe";
+import GachaWidget from "./components/GachaWidget";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -80,6 +81,7 @@ export default function RootLayout({
         <StudioHeader />
         <WibuPortal />
         {children}
+        <GachaWidget />
         <StudioFooter />
         <LanguageSwitcher />
         <BGMPlayer/>
