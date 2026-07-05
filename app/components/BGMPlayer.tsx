@@ -3,8 +3,8 @@ import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const playlist = [
-    { title: "Ngày Mai - Masaharu", src: "/bgm-1.wav" },
-    { title: "Tìm - HSY", src: "/bgm-2.wav" },
+    { title: "Ngày Mai - Masaharu", src: "/bgm-1.mp3" },
+    { title: "Tìm - HSY", src: "/bgm-2.mp3" },
   ];
 
 export default function BGMPlayer() {

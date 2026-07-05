@@ -22,10 +22,11 @@ export default function HomePage() {
           loop 
           muted 
           playsInline 
+          // THÊM THUỘC TÍNH NÀY (Nhớ quăng 1 file ảnh chụp màn hình video vào thư mục public)
           poster="/poster-showreel.jpg" 
           className="w-full h-full object-cover"
         >
-          <source src="/showreel.mp4" type="video/mp4" /> 
+          <source src="/showreel 3.mp4" type="video/mp4" /> 
         </video>
       </motion.div>
 
