@@ -90,7 +90,7 @@ const projectsData: Record<string, ProjectDetail> = {
   "kronus": {
     title: "KRONUS GENOVIUS - MV PROJECT",
     category: "CO-PRODUCTION",
-    heroImage: "/kronus.png",
+    heroImage: "/kronus_2.png",
     description: "Góp mặt trong dự án Anime Music Video bùng nổ cho VTuber Kronus. Phụ trách những phân cảnh hành động gắt gao và đảm bảo chất lượng hình ảnh sắc nét nhất.",
     client: "Kronus",
     year: "Nov 2026",

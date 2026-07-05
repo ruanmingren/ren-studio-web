@@ -75,7 +75,7 @@ export default function Footer() {
               </a>
 
               {/* TikTok Button */}
-              <a href="https://www.tiktok.com/@RenAnimationStudio" target="_blank" rel="noopener noreferrer" className="group relative inline-flex overflow-hidden cursor-pointer px-4 py-0.8">
+              <a href="https://www.tiktok.com/@Ren_Animation_Studio" target="_blank" rel="noopener noreferrer" className="group relative inline-flex overflow-hidden cursor-pointer px-4 py-0.8">
                 <span className="absolute inset-0 bg-[#2563eb] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out" />
                 <span className="relative z-10 text-sm text-zinc-400 group-hover:text-black font-bold tracking-widest uppercase transition-colors duration-300">
                   TikTok

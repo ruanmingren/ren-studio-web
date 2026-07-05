@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { motion } from "framer-motion";
+import Image from "next/image"; // Đã thêm import Image chuẩn Next.js
 
 export default function WibuPage() {
   // ==========================================
@@ -28,12 +29,18 @@ export default function WibuPage() {
   // 2. DATA CỦA GIAO DIỆN BRUTALISM
   // ==========================================
   const modules = [
-    { id: "01", name: "ANIME CHARACTER", desc: "Tư duy thiết kế nhân vật chuẩn Nhật" },
-    { id: "02", name: "ANIME BACKGROUND", desc: "Phác họa thế giới kỳ ảo" },
-    { id: "03", name: "ANIME ANIMATION", desc: "Thổi hồn vào từng Frame hình" },
-    { id: "04", name: "STORYBOARD", desc: "Đạo diễn nhịp phim trên giấy" },
-    { id: "05", name: "MANGAKA", desc: "Kể chuyện qua khung truyện tranh" },
-    { id: "06", name: "ANIME COMPOSITE", desc: "Hậu kỳ sản xuất anime" },
+    { id: "01", name: "ANIME CHARACTER", desc: "Tư duy thiết kế nhân vật chuẩn Nhật", image: "/wibu-char.jpg" },
+    { id: "02", name: "ANIME BACKGROUND", desc: "Phác họa thế giới kỳ ảo", image: "/wibu-bg.jpg" },
+    { id: "03", name: "ANIME ANIMATION", desc: "Thổi hồn vào từng Frame hình", image: "/wibu-anim.jpg" },
+    { id: "04", name: "STORYBOARD", desc: "Đạo diễn nhịp phim trên giấy", image: "/wibu-sb.jpg" },
+    { id: "05", name: "MANGAKA", desc: "Kể chuyện qua khung truyện tranh", image: "/wibu-manga.jpg" },
+    { 
+      id: "06", 
+      name: "ANIME COMPOSITE", 
+      desc: "Phép thuật hậu kỳ After Effects", 
+      image: "",
+      customText: "SẮP KHAI GIẢNG" // 👈 Ông muốn ghi chữ gì thì sửa ở giữa dấu ngoặc kép này nhé
+    },
   ];
 
   return (
@@ -100,7 +107,7 @@ export default function WibuPage() {
         
         <div className="w-full aspect-video max-w-5xl border-4 border-gray-600 bg-black flex flex-col items-center justify-center relative group overflow-hidden shadow-[8px_8px_0px_rgba(255,255,255,0.1)] hover:border-white transition-colors">
           <span className="font-mono text-gray-500 font-bold uppercase tracking-[0.2em] text-xs md:text-sm z-10">
-            <img src="/hinh.jpg" alt="Cover" className="absolute inset-0 w-full h-full object-cover opacity-80" />
+            <Image src="/hinh.jpg" alt="Cover" className="absolute inset-0 w-full h-full object-cover opacity-80" fill />
           </span>
           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/tv-noise.png')] opacity-10 mix-blend-overlay"></div>
         </div>
@@ -114,7 +121,7 @@ export default function WibuPage() {
             <span className="text-gray-500 font-bold tracking-widest text-xs hidden md:block">TỪ ZERO ĐẾN HERO</span>
           </div>
           <div className="w-full aspect-square md:aspect-[4/3] border-2 border-gray-600 bg-[#111] p-4 flex items-center justify-center text-center relative overflow-hidden group hover:border-white transition-colors">
-            <span className="font-mono text-gray-600 text-xs tracking-widest z-10">[ ĐANG TRONG GIAI ĐOẠN CẬP NHẬT HÌNH ẢNH]</span>
+            <span className="font-mono text-gray-600 text-xs tracking-widest z-10"><Image src="/gift_1.png" alt="Cover" className="absolute inset-0 w-full h-full object-cover opacity-80" fill /> </span>
           </div>
         </div>
 
@@ -124,25 +131,52 @@ export default function WibuPage() {
           </div>
           <div className="w-full h-full min-h-[300px] border-4 border-yellow-400 border-dashed bg-black p-4 flex items-center justify-center text-center relative overflow-hidden group hover:border-solid transition-all">
             <div className="absolute top-4 left-4 bg-yellow-400 text-black font-black text-xs px-2 py-1 uppercase tracking-widest z-20">GIFT</div>
-            <span className="font-mono text-gray-500 text-xs tracking-widest z-10">[ ĐANG TRONG GIAI ĐOẠN CẬP NHẬT HÌNH ẢNH]</span>
+            <span className="font-mono text-gray-500 text-xs tracking-widest z-10"><Image src="/hinh_3.jpg" alt="Cover" className="absolute inset-0 w-full h-full object-cover opacity-80" fill /> </span>
           </div>
         </div>
       </div>
 
-      {/* 4. KHOA MÔN HỌC */}
+      {/* ========================================== */}
+      {/* 4. KHOA MÔN HỌC (ĐÃ SỬA THÀNH HÌNH VUÔNG) */}
+      {/* ========================================== */}
       <div className="w-full max-w-7xl mx-auto px-4 md:px-8 py-16 border-b-2 border-gray-800">
         <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter mb-12 text-center">CÁC BỘ MÔN ĐÀO TẠO</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {modules.map((mod) => (
             <div key={mod.id} className="flex flex-col group cursor-pointer">
-              <div className="w-full aspect-[4/5] border-2 border-gray-600 bg-[#111] flex items-center justify-center relative overflow-hidden mb-4 group-hover:border-white transition-colors">
-                 <span className="font-black text-gray-800 text-7xl md:text-9xl absolute -bottom-4 -right-4 opacity-30 group-hover:text-gray-600 transition-colors">
+              
+              {/* SỬA ASPECT-[4/5] THÀNH ASPECT-SQUARE ĐỂ RA HÌNH VUÔNG */}
+              <div className="w-full aspect-square border-2 border-gray-600 bg-[#111] flex items-center justify-center relative overflow-hidden mb-4 group-hover:border-white transition-colors">
+                 
+                 {/* Số thứ tự mờ mờ */}
+                 <span className="font-black text-gray-800 text-7xl md:text-9xl absolute -bottom-4 -right-4 opacity-30 group-hover:text-gray-600 transition-colors z-0 pointer-events-none">
                    {mod.id}
                  </span>
-                 <span className="font-mono text-gray-500 text-[10px] tracking-widest uppercase z-10 px-4 text-center">
-                   [ ĐANG TRONG GIAI ĐOẠN CẬP NHẬT HÌNH ẢNH {mod.name} ]
-                 </span>
+                 
+                 {/* LOGIC KIỂM TRA HIỂN THỊ CHỮ HOẶC HÌNH */}
+                 {mod.customText ? (
+                   // Nếu có chữ customText thì hiện chữ này lên
+                   <div className="absolute inset-0 flex items-center justify-center text-center p-6 z-10 font-mono text-sm font-bold uppercase tracking-widest text-yellow-400 leading-relaxed bg-black/40 backdrop-blur-[2px]">
+                     {mod.customText}
+                   </div>
+                 ) : mod.image ? (
+                   // Nếu có hình thì hiện hình
+                   <Image 
+                     src={mod.image} 
+                     alt={mod.name} 
+                     fill
+                     sizes="(max-width: 768px) 100vw, 33vw"
+                     className="object-cover z-10 opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+                   />
+                 ) : (
+                   // Nếu không có cả hai thì báo đang cập nhật
+                   <span className="font-mono text-gray-500 text-[10px] tracking-widest uppercase z-10 px-4 text-center">
+                     [ ĐANG CẬP NHẬT HÌNH ẢNH {mod.name} ]
+                   </span>
+                 )}
+
               </div>
+              
               <div className="flex flex-col">
                 <div className="flex items-center gap-3 mb-1">
                   <span className="bg-white text-black font-black text-[10px] px-2 py-0.5">NO.{mod.id}</span>
@@ -150,6 +184,7 @@ export default function WibuPage() {
                 </div>
                 <p className="text-gray-400 text-xs md:text-sm font-medium tracking-wide uppercase">{mod.desc}</p>
               </div>
+              
             </div>
           ))}
         </div>
@@ -163,7 +198,7 @@ export default function WibuPage() {
              
              <div className="text-center z-10">
                <span className="block text-red-500 font-black text-2xl mb-2 animate-pulse">● LIVE REC</span>
-               <span className="font-mono text-gray-500 text-xs tracking-widest">[ ĐANG TRONG GIAI ĐOẠN CẬP NHẬT ]</span>
+               <span className="font-mono text-gray-500 text-xs tracking-widest"><Image src="/thumb.jpg" alt="Cover" className="absolute inset-0 w-full h-full object-cover opacity-80" fill /></span>
              </div>
              
              <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_4px,3px_100%] z-20 opacity-30"></div>

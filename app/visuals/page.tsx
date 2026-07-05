@@ -20,16 +20,16 @@ const visualsData = [
   { 
     id: 3, 
     title: "KRONUS", 
-    role: "???", 
+    role: "MV Project", 
     info: "2026 | MV PROJECT", 
-    src: "/visual-3.png" 
+    src: "/kronus_2.png" 
   },
   { 
     id: 4, 
     title: "MANGA ADAPTATION PROJECT", 
-    role: "???", 
+    role: "ADAPTATION ANIME", 
     info: "2026 | ANIME PROJECT", 
-    src: "/visual-4.png" 
+    src: "/4.png" 
   },
   { 
     id: 5, 

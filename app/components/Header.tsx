@@ -24,10 +24,26 @@ export default function Header() {
       <nav className="flex-1 flex justify-center gap-2 text-sm font-semibold tracking-wide whitespace-nowrap">
         
         <Link href="/works" className="group relative inline-flex px-4 py-0.8 overflow-hidden cursor-pointer">
-          {/* Dùng origin-left và scale-x-0 để khung giãn từ trái sang phải mượt mà */}
           <span className="absolute inset-0 bg-[#2563eb] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out" />
           <span className="relative z-10 text-white group-hover:text-black transition-colors duration-300">WORKS</span>
         </Link>
+
+        <Link href="/services" className="group relative inline-flex px-4 py-0.8 overflow-hidden cursor-pointer">
+          <span className="absolute inset-0 bg-[#2563eb] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out" />
+          <span className="relative z-10 text-white group-hover:text-black transition-colors duration-300">SERVICES</span>
+        </Link>
+        
+        <Link href="/how-we-work" className="group relative inline-flex px-4 py-0.8 overflow-hidden cursor-pointer">
+          <span className="absolute inset-0 bg-[#2563eb] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out" />
+          <span className="relative z-10 text-white group-hover:text-black transition-colors duration-300">HOW WE WORK</span>
+        </Link>
+        
+        {/* --- TAB PODCAST MỚI THÊM VÀO --- */}
+        <Link href="/podcast" className="group relative inline-flex px-4 py-0.8 overflow-hidden cursor-pointer">
+          <span className="absolute inset-0 bg-[#2563eb] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out" />
+          <span className="relative z-10 text-white group-hover:text-black transition-colors duration-300">PODCASTS</span>
+        </Link>
+        {/* -------------------------- */}
         
         <Link href="/about" className="group relative inline-flex px-4 py-0.8 overflow-hidden cursor-pointer">
           <span className="absolute inset-0 bg-[#2563eb] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out" />

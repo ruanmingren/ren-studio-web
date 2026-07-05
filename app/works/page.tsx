@@ -1,17 +1,15 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import FadeUp from "../components/FadeUp";
+import FadeUp from "../components/FadeUp"; // Giữ nguyên component FadeUp của ông
 
 const projects = [
   { id: 1, title: "7.1.111 (TIM)", category: "ORIGINAL IP", type: "ANIME SERIES | UPCOMING", image: "/71111.png", link: "/works/71111" },
   { id: 2, title: "SƠN HÀ XÍCH QUỶ", category: "ORIGINAL IP", type: "VISUAL NOVEL", image: "/sonha.png", link: "/works/son-ha-xich-quy" },
   { id: 3, title: "DỰ ÁN MANGA BÍ MẬT", category: "ADAPTATION", type: "MANGA | UPCOMING", image: "/manga.png", link: "/works/manga" },
-  { id: 4, title: "KRONUS - MV PROJECT", category: "CO-PRODUCTION", type: "ANIME MV | UPCOMING", image: "/kronus.png", link: "/works/kronus" },
-  
-  // Tên file đã chuẩn, không dùng ?v=1
+  { id: 4, title: "KRONUS - MV PROJECT", category: "CO-PRODUCTION", type: "ANIME MV | UPCOMING", image: "/kronus_2.png", link: "/works/kronus" },
   { id: 5, title: "GAWRGURA - SHARK'D", category: "CO-PRODUCTION", type: "ANIME MV", image: "/gawr_gura.png", link: "/works/gawr-gura-1" },
   { id: 6, title: "GAWRGURA - BLUE HORIZON", category: "CO-PRODUCTION", type: "ANIME MV", image: "/gawr_gura2.png", link: "/works/gawr-gura-2" },
   { id: 7, title: "IRONMOUSE - UNLEASHED", category: "CO-PRODUCTION", type: "ANIME MV", image: "/ironmouse_v.png", link: "/works/ironmouse" }
@@ -35,17 +33,16 @@ type ProjectCardProps = {
 const ProjectCard = ({ project, index, setHoveredBg }: ProjectCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
 
-  useEffect(() => {
-    let timer: NodeJS.Timeout;
-    if (isHovered) {
-      timer = setTimeout(() => {
-        setHoveredBg(project.image);
-      }, 600);
-    } else {
-      setHoveredBg(null); 
-    }
-    return () => clearTimeout(timer);
-  }, [isHovered, project.image, setHoveredBg]);
+  // 🛠️ ĐÃ FIX: Bỏ useEffect 600ms, gán thẳng sự kiện đổi nền vào đây cho nó nhạy như điện!
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+    setHoveredBg(project.image);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+    setHoveredBg(null);
+  };
 
   return (
     <FadeUp delay={index * 0.15}>
@@ -53,8 +50,8 @@ const ProjectCard = ({ project, index, setHoveredBg }: ProjectCardProps) => {
         href={project.link} 
         className="group cursor-pointer block relative"
         data-cursor="view" 
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
       >
         <div className="relative w-full aspect-video bg-zinc-900 mb-6">
           
@@ -88,14 +85,14 @@ const ProjectCard = ({ project, index, setHoveredBg }: ProjectCardProps) => {
 
         <div className="flex flex-col relative z-10">
           <div className="flex gap-4 mb-2">
-            <span className="text-xs font-bold text-zinc-500 tracking-widest border border-zinc-700 px-2 py-1">
+            <span className="text-xs font-bold text-zinc-500 tracking-widest border border-zinc-700 px-2 py-1 group-hover:text-white transition-colors">
               {project.category}
             </span>
-            <span className="text-xs font-bold text-zinc-500 tracking-widest py-1">
+            <span className="text-xs font-bold text-zinc-500 tracking-widest py-1 group-hover:text-white transition-colors">
               {project.type}
             </span>
           </div>
-          <h3 className="text-2xl font-black text-white tracking-wider group-hover:text-zinc-400 transition-colors">
+          <h3 className="text-2xl font-black text-white tracking-wider group-hover:text-blue-500 transition-colors">
             {project.title}
           </h3>
         </div>
@@ -115,26 +112,40 @@ export default function WorksPage() {
 
   return (
     <>
+      {/* Nền đen lót dưới cùng */}
       <div className="fixed inset-0 z-[-2] bg-black" />
 
-      <AnimatePresence>
-        {hoveredBg && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0.15 }} 
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.8 }} 
-            className="fixed inset-0 z-[-1] pointer-events-none"
-          >
-            <Image
-              src={hoveredBg}
-              alt="Background Overlay"
-              fill
-              className="object-cover blur-sm" 
-            />
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {/* 🛠️ ĐÃ FIX: Thêm key={hoveredBg} và tăng nhẹ opacity lên 25% + scale mượt */}
+      <div className="fixed inset-0 z-[-1] pointer-events-none">
+        <AnimatePresence>
+          {hoveredBg && (
+            <motion.div
+              key={hoveredBg} 
+              initial={{ opacity: 0, scale: 1.05 }}
+              animate={{ opacity: 0.25, scale: 1 }} 
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut" }} 
+              className="absolute inset-0"
+            >
+              <Image
+                src={hoveredBg}
+                alt="Background Overlay"
+                fill
+                className="object-cover blur-sm" 
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
+        
+        {/* Lớp lưới Halftone ảo ảo lót trên hình nền mờ */}
+        <div 
+          className="absolute inset-0 opacity-40"
+          style={{
+            backgroundImage: "radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px)",
+            backgroundSize: "8px 8px",
+          }}
+        />
+      </div>
 
       <main className="min-h-screen pt-32 pb-24 px-6 md:px-12 w-full relative z-10">
         
@@ -155,7 +166,7 @@ export default function WorksPage() {
                   key={tab}
                   onClick={() => setActiveTab(tab)}
                   className={`tracking-widest text-sm font-bold uppercase transition-colors duration-300 pb-2 border-b-2 ${
-                    activeTab === tab ? "text-white border-white" : "text-zinc-600 border-transparent hover:text-zinc-300"
+                    activeTab === tab ? "text-white border-white" : "text-zinc-600 border-transparent hover:text-white"
                   }`}
                 >
                   {tab}
