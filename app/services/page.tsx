@@ -163,9 +163,14 @@ export default function ServicesPage() {
                   <p className="text-gray-400 text-xs md:text-sm font-bold tracking-widest uppercase md:text-right leading-relaxed mb-4 md:max-w-md group-hover:text-white transition-colors drop-shadow-md">
                     {svc.desc}
                   </p>
-                  <button className="px-4 py-1.5 border border-gray-500 text-gray-300 text-[10px] uppercase tracking-widest font-bold group-hover:bg-yellow-400 group-hover:text-black group-hover:border-yellow-400 transition-all shadow-lg">
-                    + YÊU CẦU BÁO GIÁ
-                  </button>
+                  <a 
+                    href="mailto:contact@renanimation.com?subject=Yêu cầu báo giá dịch vụ - Ren Animation Studio" 
+                    className="group relative inline-flex items-center justify-center px-8 py-4 border-2 border-white bg-black hover:bg-[#2563eb] hover:border-[#2563eb] transition-all duration-300 overflow-hidden cursor-pointer"
+                  >
+                    <span className="relative z-10 font-black text-lg md:text-xl uppercase tracking-[0.2em] group-hover:text-white transition-colors duration-300">
+                      YÊU CẦU BÁO GIÁ
+                    </span>
+                  </a>
                 </div>
               </div>
             ))}
