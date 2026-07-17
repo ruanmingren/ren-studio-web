@@ -99,8 +99,22 @@ export default function GachaSystem() {
     return `${m}:${s}`;
   };
 
-  const displayCards = gachaPool.filter((c: GachaCard) => selectedTag === "all" || c.tag === selectedTag);
-  const tags = ["all", "food", "job", "project", "gear", "software", "studio"];
+// 🛠️ BƯỚC 2: THAY THẾ KHU VỰC LỌC THẺ
+    // Gộp chung thể loại và độ hiếm vào 1 mảng duy nhất
+  const filters = ["all", "food", "job", "project", "gear", "software", "studio", "SSR", "SR", "R"];
+
+  const displayCards = gachaPool.filter((c: GachaCard) => {
+    // Nếu chọn ALL thì hiện tất cả
+    if (selectedTag === "all") return true;
+    
+    // Nếu nút bấm là SSR, SR, hoặc R thì đem đi so sánh với độ hiếm (rarity)
+    if (["SSR", "SR", "R"].includes(selectedTag)) {
+      return c.rarity === selectedTag;
+    }
+    
+    // Còn lại thì đem đi so sánh với thể loại (tag)
+    return c.tag === selectedTag;
+  });
 
   return (
     <div className="relative flex flex-col p-6 md:p-8 bg-[#0a0a0a] border-2 border-gray-600 max-w-2xl mx-auto w-full min-h-[500px]"
@@ -225,18 +239,23 @@ export default function GachaSystem() {
             initial={{ opacity: 0, x: 10 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 10 }}
             className="flex flex-col flex-grow h-full"
           >
-            <div className="flex flex-wrap gap-3 mb-6">
-              {tags.map(tag => (
+            
+            {/* HÀNG NÚT BẤM DUY NHẤT (ĐÃ GỘP CẢ LOẠI LẪN ĐỘ HIẾM) */}
+            <div className="flex flex-wrap gap-2 mb-6 pb-4 border-b border-gray-800">
+              {filters.map(filter => (
                 <button 
-                  key={tag}
-                  onClick={() => setSelectedTag(tag)}
+                  key={filter}
+                  onClick={() => setSelectedTag(filter)}
                   className={`px-3 py-1 text-[10px] md:text-xs font-bold uppercase tracking-widest transition-colors border-2 ${
-                    selectedTag === tag 
-                      ? "bg-white text-black border-white" 
+                    selectedTag === filter 
+                      ? (filter === "SSR" ? "bg-yellow-500 text-black border-yellow-500 shadow-[0_0_10px_rgba(234,179,8,0.5)]" : 
+                         filter === "SR" ? "bg-purple-500 text-white border-purple-500 shadow-[0_0_10px_rgba(168,85,247,0.5)]" : 
+                         filter === "R" ? "bg-blue-500 text-white border-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.5)]" : 
+                         "bg-white text-black border-white")
                       : "bg-transparent text-gray-500 border-transparent hover:border-gray-600"
                   }`}
                 >
-                  {tag === "all" ? "TẤT CẢ" : tag}
+                  {filter === "all" ? "TẤT CẢ" : filter}
                 </button>
               ))}
             </div>
