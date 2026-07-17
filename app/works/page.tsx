@@ -8,11 +8,12 @@ import FadeUp from "../components/FadeUp"; // Giữ nguyên component FadeUp c�
 const projects = [
   { id: 1, title: "7.1.111 (TIM)", category: "ORIGINAL IP", type: "ANIME SERIES | UPCOMING", image: "/71111.png", link: "/works/71111" },
   { id: 2, title: "SƠN HÀ XÍCH QUỶ", category: "ORIGINAL IP", type: "VISUAL NOVEL", image: "/sonha.png", link: "/works/son-ha-xich-quy" },
-  { id: 3, title: "DỰ ÁN MANGA BÍ MẬT", category: "ADAPTATION", type: "MANGA | UPCOMING", image: "/manga.png", link: "/works/manga" },
-  { id: 4, title: "KRONUS - MV PROJECT", category: "CO-PRODUCTION", type: "ANIME MV | UPCOMING", image: "/kronus_2.png", link: "/works/kronus" },
-  { id: 5, title: "GAWRGURA - SHARK'D", category: "CO-PRODUCTION", type: "ANIME MV", image: "/gawr_gura.png", link: "/works/gawr-gura-1" },
-  { id: 6, title: "GAWRGURA - BLUE HORIZON", category: "CO-PRODUCTION", type: "ANIME MV", image: "/gawr_gura2.png", link: "/works/gawr-gura-2" },
-  { id: 7, title: "IRONMOUSE - UNLEASHED", category: "CO-PRODUCTION", type: "ANIME MV", image: "/ironmouse_v.png", link: "/works/ironmouse" }
+  { id: 3, title: "MANGA MẢNH GHÉP", category: "ORIGINAL IP", type: "MANGA | UPCOMING", image: "/manga3.png", link: "/works/manga3" },
+  { id: 4, title: "MANGA LÃNG VONG", category: "ADAPTATION", type: "MANGA | UPCOMING", image: "/manga2.png", link: "/works/manga2" },
+  { id: 5, title: "KRONUS - MV PROJECT", category: "CO-PRODUCTION", type: "ANIME MV | UPCOMING", image: "/kronus_2.png", link: "/works/kronus" },
+  { id: 6, title: "GAWRGURA - SHARK'D", category: "CO-PRODUCTION", type: "ANIME MV", image: "/gawr_gura.png", link: "/works/gawr-gura-1" },
+  { id: 7, title: "GAWRGURA - BLUE HORIZON", category: "CO-PRODUCTION", type: "ANIME MV", image: "/gawr_gura2.png", link: "/works/gawr-gura-2" },
+  { id: 8, title: "IRONMOUSE - UNLEASHED", category: "CO-PRODUCTION", type: "ANIME MV", image: "/ironmouse_v.png", link: "/works/ironmouse" }
 ];
 
 const tabs = ["ALL", "ORIGINAL IP", "CO-PRODUCTION", "ADAPTATION"];

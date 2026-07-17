@@ -7,14 +7,14 @@ const visualsData = [
     id: 1, 
     title: "Thuận Thiên Kiếm - Sơn Hà Xích Quỷ", 
     role: "Background Art", 
-    info: "2026 - Visual Novel Game", 
+    info: "2026 | VISUAL NOVEL GAME", 
     src: "/visual-1.png" 
   },
   { 
     id: 2, 
     title: "Bưu Điện Thành Phố Hồ Chí Minh - 7.1.111", 
     role: "Visual Development", 
-    info: "2026 - Anime Series | Upcoming", 
+    info: "2026 | ANIME SERIES | UPCOMING", 
     src: "/visual-2.png" 
   },
   { 
@@ -26,31 +26,31 @@ const visualsData = [
   },
   { 
     id: 4, 
-    title: "MANGA ADAPTATION PROJECT", 
-    role: "ADAPTATION ANIME", 
-    info: "2026 | ANIME PROJECT", 
-    src: "/4.png" 
+    title: "MANGA MẢNH GHÉP", 
+    role: "Manga Project", 
+    info: "2026 | MANGA PROJECT", 
+    src: "/manga3.png" 
   },
   { 
     id: 5, 
-    title: "???", 
-    role: "???", 
-    info: "???", 
-    src: "/visual-5.png" 
+    title: "MANGA LÃNG VONG", 
+    role: "Anime Adaptation Project", 
+    info: "2026 | ANIME ADAPTATION PROJECT", 
+    src: "/manga2.png" 
   },
   { 
     id: 6, 
-    title: "???", 
-    role: "???", 
-    info: "???", 
-    src: "/visual-6.png" 
+    title: "GAWRGURA - SHARK'D", 
+    role: "Background Art", 
+    info: "2023 | GAWR GURA MV", 
+    src: "/gawr_gura.png" 
   },
   { 
     id: 7, 
-    title: "???", 
-    role: "???", 
-    info: "???", 
-    src: "/visual-7.png" 
+    title: "LANDMARK 81 - 7.1.111", 
+    role: "Background Art", 
+    info: "2026 | ANIME SERIES | UPCOMING", 
+    src: "/bgs.png" 
   },
   { 
     id: 8, 

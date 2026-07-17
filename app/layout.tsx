@@ -3,7 +3,6 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { StudioHeader, StudioFooter } from "./components/StudioNav";
 import WibuPortal from "./components/WibuPortal";
-import LanguageSwitcher from "./components/LanguageSwitcher";
 import CustomCursor from "./components/CustomCursor";
 import BGMPlayer from "./components/BGMPlayer";
 import OrganizationJsonLd from "./components/OrganizationJsonLd"; // Nhớ import cái này 
@@ -83,7 +82,6 @@ export default function RootLayout({
         {children}
         <GachaWidget />
         <StudioFooter />
-        <LanguageSwitcher />
         <BGMPlayer/>
       </body>
     </html>

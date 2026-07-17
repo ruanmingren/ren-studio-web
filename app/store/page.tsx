@@ -19,16 +19,26 @@ export default function ComingSoonPage() {
         
         {/* Đã gỡ bỏ hiệu ứng zoom ở thẻ Image để hình không bị cắt xén */}
         <Image 
-          src="/SceneBG01.jpg"
+          src="/SceneBG02.jpg"
           alt="Ren Animation Store Exclusive Poster"
           width={4000}
-          height={4928}
+          height={3766}
           className="w-full h-auto object-contain"
           priority 
         />
         
         {/* Hiệu ứng phủ đen mờ nhẹ lúc bình thường, rê chuột vào sẽ sáng rõ lên */}
         <div className="absolute inset-0 bg-black/30 group-hover:bg-transparent transition-colors duration-500 pointer-events-none" />
+      </div>
+
+      {/* 🛠️ KHU VỰC THÊM CHỮ DƯỚI HÌNH CỦA ÔNG NẰM Ở ĐÂY */}
+      <div className="mt-8 text-center max-w-2xl relative z-10">
+        <p className="text-zinc-300 text-lg md:text-xl font-medium tracking-wide">
+          Đến HOBBY HORIZON BOOTH E23 để gacha những món merch độc quyền của Ren Animation Studio!
+        </p>
+        <p className="text-zinc-500 mt-2 text-sm uppercase tracking-widest">
+          Chỉ duy nhất trong 2 ngày 17-18/08/2024 tại Hobby Horizon  
+        </p>
       </div>
 
     </main>

@@ -10,6 +10,8 @@ const clients = [
   { name: "Tonari", src: "/tonari.png" },
   { name: "VNG", src: "/vng.png" },
   { name: "Wacom", src: "/wacom-logo.png" },
+  { name: "WIBU", src: "/wibu.png" },
+  { name: "HEAD", src: "/head.png" },
 ];
 
 export default function MarqueeClients() {

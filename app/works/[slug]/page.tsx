@@ -74,17 +74,30 @@ const projectsData: Record<string, ProjectDetail> = {
       { role: "Programming", name: "Nguyễn Minh Nhân" },
     ],
   },
-  "manga": {
+  "manga3": {
+    title: "MANGA",
+    category: "ORIGINAL IP",
+    heroImage: "/manga3.png",
+    description: "Một câu chuyện về thời sinh viên của Ngọc Uyên, một ngày nọ cô tìm lại được chiếc mắt kiếng kỉ niệm của mẹ mình và một lần nọ tại trường đại học cô bé vô tình nhìn thấy được những mảnh ghép kì lạ trước ngực của chàng trai bản thân thương nhớ, liệu rằng cô sẽ làm gì với khả năng đặc biệt này ?, ngoài ra thì câu chuyện diễn ra vào năm 2013 nơi Sài Gòn xưa cũ của hơn 13 năm trước",
+    client: "Mangaka Nguyễn",
+    year: "Tháng 9 năm 2026",
+    role: "Manga",
+    staff: [
+      { role: "Story", name: "Nguyễn" },
+      { role: "Assistant Mangaka", name: "Team học viên lớp Mangaka" },
+    ],
+  },
+  "manga2": {
     title: "CHUYỂN THỂ MANGA",
     category: "ADAPTATION",
-    heroImage: "/manga.png",
+    heroImage: "/manga2.png",
     description: "Một dự án Manga dài hơi đang trong quá trình thai nghén, hứa hẹn mang đến một thế giới nguyên bản đầy sáng tạo với phong cách nghệ thuật đặc trưng.",
     client: "Mangaka Bùi Văn Hoàng Tiếng",
     year: "TBA",
     role: "Animation / Storyboard",
     staff: [
       { role: "Mangaka", name: "Bùi Văn Hoàng Tiếng" },
-      { role: "Animator", name: "Nguyễn Minh Nhân" },
+      { role: "Animator", name: "Ren Animation Studio" },
     ],
   },
   "kronus": {
